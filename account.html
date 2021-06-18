@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBotics</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <section class="app">
+        <aside class="nav__left">
+            <div class="nav__left__info">
+                <i class="material-icons menu closeicon" onclick="openMenu()">close</i>
+                <i class="material-icons faceIcon">face</i>
+                <p>M. Ali</p>
+            </div>
+            <div class="nav__left__items ">
+                <div class="nav__left__item" onclick="window.location.href='index.html'">
+                    <i class="material-icons">home</i>
+                    <p>Home</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='surveys.html'">
+                    <i class="material-icons">message</i>
+                    <p>My Surveys</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='create.html'">
+                    <i class="material-icons">create</i>
+                    <p>Create a Survey</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='analytics.html'">
+                    <i class="material-icons">analytics</i>
+                    <p>Survey Analytics</p>
+                </div>
+                <div class="nav__left__item active__nav" onclick="window.location.href='account.html'">
+                    <i class="material-icons">person</i>
+                    <p>My Account</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='logout.html'">
+                    <i class="material-icons">login</i>
+                    <p>Log Out</p>
+                </div>
+            </div>
+        </aside>
+        <main class="main landing">
+            <nav class="top__nav">
+                <div class="top__nav__right">
+                    <i class="material-icons menu" onclick="openMenu()">view_headline</i>
+                    <input type="text" class="d-none d-sm-inline" placeholder="Search">
+                    <i class="material-icons first__icon d-none d-sm-inline">search</i>
+                    <i class="material-icons nth__icon">dashboard</i>
+                    <span class="material-icons"><a href="map.html" target="_blank" style="color: white;">location_on</a></span>
+                    
+                </div>
+            </nav>
+
+            <div class="container" style="height: 80vh;display: grid;">
+                <div class="card card-chart " style="width:100%;opacity: 0.9;">
+                    <h5 class="card-title text-center py-4">My Account</h5>
+                    <div class="text-center" style="width: 100%;">
+                        <img src="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
+                            width="100px" height="100px" style="border-radius: 50%;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-subtitle text-muted text-center mb-4">Masooma Rubab</h5>
+                        <!-- three events; 1.onsubmit() 2.onmousemove() 3.onclick() -->
+                        <form name="myForm" onsubmit="return validateForm()"> 
+                            <div class="form-group mb-4">
+                                <label for="exampleInputEmail1">First Name</label>
+                                <input type="text" class="form-control" placeholder="" id="fname" name="fname" onmousemove="message1()">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="exampleInputEmail1">Last Name</label>
+                                <input type="text" class="form-control" placeholder="" id="lname" name='lname' onmousemove="message2()">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="exampleInputEmail1">Email Address</label>
+                                <input type="email" class="form-control" placeholder="Enter Email"
+                                    id="email" name="mail" onmousemove="message3()">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="exampleInputEmail1">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter Password" id="pass"
+                                    value="" name="password" >
+                                    <input type="checkbox" onclick="passwordDisplay()">Show Password
+                            </div>
+                            <div class="form-group text-center mt-4">
+                                <button type="submit" class="btn btn-primary">Update Profile</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <!-- Jquery -->
+    <script>
+        $("form").submit(function(){
+            if(document.forms["myForm"]["fname"].value && document.forms["myForm"]["lname"].value && document.forms["myForm"]["email"].value && document.forms["myForm"]["password"].value){
+                alert("Form has been Submitted");
+            }
+        });
+    </script>
+</body>
+
+</html>

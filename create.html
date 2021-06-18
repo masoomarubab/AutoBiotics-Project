@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBotics</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <section class="app">
+        <aside class="nav__left" style="height:160vh">
+            <div class="nav__left__info">
+                <i class="material-icons menu closeicon" onclick="openMenu()">close</i>
+                <i class="material-icons faceIcon">face</i>
+                <p>M. Ali</p>
+            </div>
+            <div class="nav__left__items ">
+                <div class="nav__left__item" onclick="window.location.href='index.html'">
+                    <i class="material-icons">home</i>
+                    <p>Home</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='surveys.html'">
+                    <i class="material-icons">message</i>
+                    <p>My Surveys</p>
+                </div>
+                <div class="nav__left__item active__nav" onclick="window.location.href='create.html'">
+                    <i class="material-icons">create</i>
+                    <p>Create a Survey</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='analytics.html'">
+                    <i class="material-icons">analytics</i>
+                    <p>Survey Analytics</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='account.html'">
+                    <i class="material-icons">person</i>
+                    <p>My Account</p>
+                </div>
+                <div class="nav__left__item" onclick="window.location.href='logout.html'">
+                    <i class="material-icons">login</i>
+                    <p>Log Out</p>
+                </div>
+            </div>
+        </aside>
+        <main class="main landing">
+            <nav class="top__nav">
+                <div class="top__nav__right">
+                    <i class="material-icons menu" onclick="openMenu()">view_headline</i>
+                    <input type="text" class="d-none d-sm-inline" placeholder="Search">
+                    <i class="material-icons first__icon d-none d-sm-inline">search</i>
+                    <i class="material-icons nth__icon">dashboard</i>
+                    <span class="material-icons"><a href="map.html" target="_blank" style="color: white;">location_on</a></span>
+                    
+                </div>
+            </nav>
+            <!-- Jquery UI -->
+            <div class="container" style="height: 80vh;display: grid;">
+                <div id="accordion">
+                    <div class="card card-chart">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 btn btn-link"
+                                style="display:flex; justify-content: space-between; align-items: center;">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <span style="font-size: 20px;">Basic Survey Setup</span>
+                                </button>
+                                Show Details
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="mb-4">This is the basic survey information like survey
+                                    identifiers and other stuff
+                                    such as choosing the appropriate trigger word.</p>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Name</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="Survey Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Description</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            placeholder="Survey Description" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Choose Trigger Word</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option selected>sunshine-123</option>
+                                            <option>Create New Trigger Word</option>
+                                            <option>petrol-pk</option>
+                                            <option>uet-tax-pk</option>
+                                            <option>test-786</option>
+                                            <option>hello-world</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Creation Date</label>
+                                        <input type="text" id="datepicker" class="text-dark" style="background-color: white;color: red;z-index: 1070">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                Active
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-chart">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 btn btn-link"
+                                style="display:flex; justify-content: space-between; align-items: center;">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="true" aria-controls="collapseTwo">
+                                    <span style="font-size: 20px;"> Advanced Survey Setup</span>
+                                </button>
+                                Show Details
+                            </h5>
+                        </div>
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="mb-4">Here you can create or modify the questions specific to your survey. You
+                                    can always delete them if you don't like them anymore.</p>
+                                <div class="card card-chart" style="opacity: 0.9;background-color: rgb(145, 115, 228);">
+                                    <div class="card-header ">
+                                        <div class="row" style="align-items: center;">
+                                            <div class="col-6 text-left">
+                                                <h6 class="card-category">Before we start, let's have your first and
+                                                    last name?</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="btn-group btn-group-toggle float-right"
+                                                    data-toggle="buttons">
+                                                    <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                                                        <input type="radio" name="options" checked>
+                                                        <span class="d-block"><i class="material-icons nth__icon">
+                                                                edit
+                                                            </i></span>
+                                                    </label>
+                                                    <label class="btn btn-sm btn-primary btn-simple" id="1">
+                                                        <input type="radio" class="d-none d-sm-none" name="options">
+                                                        <span class="d-block"><i
+                                                                class="material-icons nth__icon text-danger">
+                                                                delete
+                                                            </i></span>
+                                                    </label>
+                                                    <label class="btn btn-sm btn-primary btn-simple" id="2">
+                                                        <input type="radio" class="d-none" name="options">
+                                                        <span class="d-block"><i
+                                                                class="material-icons nth__icon text-dark">
+                                                                reorder
+                                                            </i></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-chart" style="opacity: 0.9;background-color: rgb(145, 115, 228);">
+                                    <div class="card-header ">
+                                        <div class="row" style="align-items: center;">
+                                            <div class="col-6 text-left">
+                                                <h6 class="card-category">Great! Now how about your email address?</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="btn-group btn-group-toggle float-right"
+                                                    data-toggle="buttons">
+                                                    <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                                                        <input type="radio" name="options" checked>
+                                                        <span class="d-block"><i class="material-icons nth__icon">
+                                                                edit
+                                                            </i></span>
+                                                    </label>
+                                                    <label class="btn btn-sm btn-primary btn-simple" id="1">
+                                                        <input type="radio" class="d-none d-sm-none" name="options">
+                                                        <span class="d-block"><i
+                                                                class="material-icons nth__icon text-danger">
+                                                                delete
+                                                            </i></span>
+                                                    </label>
+                                                    <label class="btn btn-sm btn-primary btn-simple" id="2">
+                                                        <input type="radio" class="d-none" name="options">
+                                                        <span class="d-block"><i
+                                                                class="material-icons nth__icon text-dark">
+                                                                reorder
+                                                            </i></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-chart" style="opacity: 0.9;background-color: rgb(145, 115, 228);">
+                                    <div class="card-header ">
+                                        <div class="row" style="align-items: center;">
+                                            <div class="col-6 text-left">
+                                                <h6 class="card-category">On a scale of 1-10, how would you rate our
+                                                    app?</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="btn-group btn-group-toggle float-right"
+                                                    data-toggle="buttons">
+                                                    <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                                                        <input type="radio" name="options" checked>
+                                                        <span class="d-block"><i class="material-icons nth__icon">
+                                                                edit
+                                                            </i></span>
+                                                    </label>
+                                                    <label class="btn btn-sm btn-primary btn-simple" id="1">
+                                                        <input type="radio" class="d-none d-sm-none" name="options">
+                                                        <span class="d-block"><i
+                                                                class="material-icons nth__icon text-danger">
+                                                                delete
+                                                            </i></span>
+                                                    </label>
+                                                    <label class="btn btn-sm btn-primary btn-simple" id="2">
+                                                        <input type="radio" class="d-none" name="options">
+                                                        <span class="d-block"><i
+                                                                class="material-icons nth__icon text-dark">
+                                                                reorder
+                                                            </i></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center"><button class="btn btn-primary">Add Question</button></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-chart">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 btn btn-link"
+                                style="display:flex; justify-content: space-between; align-items: center;">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="true" aria-controls="collapseThree">
+                                    <span style="font-size: 20px;">Survey Completion Setup</span>
+                                </button>
+                                Show Details
+                            </h5>
+                        </div>
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="mb-4">This is the survey completion section where you provide an ending
+                                    message and an opt in message, if the user requests an opt in.</p>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Completion Message</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="Completion Message">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                Request Opt In
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Opt In Message</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="Opt In Message">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <h1 class="text-white">How to complete Online Survey</h1>
+                        <iframe  width="560" height="315" 
+                            src="https://www.youtube.com/embed/72wBvaa223c" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+
+                        
+                    </div>
+                    
+                    
+                    <div class="d-flex justify-content-center mt-3 mb-3">
+                        <button class="btn btn-danger mx-4">Cancel</button>
+                        <button class="btn btn-primary mx-4">Save Survey</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </section>
+    <script>
+        $( document ).ready(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
+
+</body>
+
+</html>
